@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Étudiant BUT Info</title>
+    <style>
+        :root {
+            --bg-blue-dark: #0f2027;
+            --bg-blue-light: #203a43;
+            --accent-blue: #00d2ff;
+            --text-light: #e6f1f5;
+            --container-bg: rgba(15, 32, 39, 0.85); 
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(to right, var(--bg-blue-dark), var(--bg-blue-light));
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 1900px;
+            margin: 40px auto;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            background: linear-gradient(to right, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--accent-blue);
+            letter-spacing: 2px;
+        }
+
+        h2 { color: var(--accent-blue); margin-top: 0; }
+        section { margin-bottom: 40px; }
+
+        .tabs-container {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            opacity: 0.6;
+        }
+
+        .tab-btn:hover { opacity: 1; background: rgba(0, 210, 255, 0.1); }
+
+        .tab-btn.active {
+            background: var(--accent-blue);
+            color: var(--bg-blue-dark);
+            opacity: 1;
+        }
+
+        .tab-content {
+            display: none; 
+            animation: fadeIn 0.5s ease;
+        }
+        
+
+        .tab-content.active-content {
+            display: block;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .skills-list li { margin-bottom: 8px; }
+        .tag { display: inline-block; background: rgba(0, 210, 255, 0.2); padding: 2px 8px; border-radius: 4px; font-size: 0.9em; margin-right: 5px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <header>
+            <h2>Mohammad Rayaan</h2>
+            <p class="subtitle">Étudiant en 1ère année BUT Informatique</p>
+        </header>
+
+        <section id="intro">
+            <h2>Mon Objectif</h2>
+            <p>
+                Je suis actuellement en première année de BUT Informatique. Mon objectif est d'acquérir des nouvelles competences en développement web, en progammation et en base de données. Après mon BUT Informatique, je souhaite poursuivre mes études en école d'ingénieur pour me spécialiser dans le développement logiciel ou faire un master.
+            </p>
+        </section>
+
+        <section id="skills-interactive">
+            <h2>Mes Compétences</h2>
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="openTab(event, 'Web')">Développement Web</button>
+                    <button class="tab-btn" onclick="openTab(event, 'Prog')">Programmation et Algo</button>
+                    <button class="tab-btn" onclick="openTab(event, 'Tools')">Outils et Système</button>
+                </div>
+
+                <div id="Web" class="tab-content active-content">
+                   <ul>
+                       <li>HTML5 : Structure de base des pages.</li>
+                       <li>CSS3 : La mise en page, couleurs, bases du responsive.</li>
+                   </ul>
+                </div>
+
+                <div id="Prog" class="tab-content">
+                    <ul>
+                        <li>Python : Syntaxe de base, boucles, conditions, fonctions.</li>
+                        <li>Algorithmique : Compréhension des structures de données simples (tableaux, listes).</li>
+                        <li>SQL : Requêtes simples comme (SELECT, INSERT, etc...).</li>
+                    </ul>
+                </div>
+
+                <div id="Tools" class="tab-content">
+                    <ul>
+                        <li>Linux : Commandes terminal de base (cd, ls, mkdir...).</li>
+                        <li>IDE : Visual Studio Code.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets-exemples">
+            <h2>Projets Académiques</h2>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 15px;">
+                <h3>Projet Web (HTML/CSS)</h3>
+                <ul>
+                    <li>Réalisation d'un Templates, porfolio.</li>
+                    <li>Réalisation d'un site UNESCO</li>
+                </ul>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
+                <h3>Mini-jeu en Python</h3>
+                <ul>
+                    <li>Création d'un jeu "Wall is you"</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active-content");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).classList.add("active-content");
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
